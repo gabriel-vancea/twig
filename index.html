@@ -7,7 +7,7 @@
             function groupArrayElements(array, n) {
                 const results = [];
 
-                if (array.length && !array.some(isNaN)) {
+                if (array.length) {
                     if (!array.some(isNaN)) { // check if the array contains only numbers
                         for (let i = n; i > 0; i--) {
                             results.push(array.splice(0, Math.ceil(array.length / i)));
