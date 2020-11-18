@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h2>TWIG Education test</h2>
+        <div id="results"></div>
+        <script>
+            function groupArrayElements(array, n) {
+                const results = [];
+
+                if (array.length && !array.some(isNaN)) {
+                    if (!array.some(isNaN)) { // check if the array contains only numbers
+                        for (let i = n; i > 0; i--) {
+                            results.push(array.splice(0, Math.ceil(array.length / i)));
+                        }
+                    } else {
+                        throw new Error('The array must contain only numbers!')
+                    }
+                } else {
+                    throw new Error('No data provided.')
+                }
+                return results;
+            }
+
+            const array = groupArrayElements([1, 2, 3, 4, 5], 3);
+
+            // make an object and place it inside #results div
+            document.getElementById('results').innerHTML += JSON.stringify(array);
+
+        </script>
+
+    </body>
+</html>
